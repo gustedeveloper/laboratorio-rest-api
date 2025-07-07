@@ -41,6 +41,9 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
             <br />
             {character.origin.name}
           </Typography>
+          <Typography style={{ color: 'green', fontWeight: 'bold' }}>
+            {character.bestSentence}
+          </Typography>
         </div>
       </CardContent>
       <CardActions>

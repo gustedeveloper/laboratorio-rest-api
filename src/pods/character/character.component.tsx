@@ -2,7 +2,6 @@ import React from 'react';
 import { Formik, Form } from 'formik';
 import Button from '@mui/material/Button';
 import { TextFieldComponent } from '#common/components';
-import { formValidation } from './character.validations';
 import { Character } from './character.vm';
 import * as classes from './character.styles';
 
@@ -19,18 +18,88 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
       onSubmit={onSave}
       initialValues={character}
       enableReinitialize={true}
-      validate={formValidation.validateForm}
     >
       {() => (
         <Form className={classes.root}>
-          <TextFieldComponent name="name" label="Name" />
-          <TextFieldComponent name="status" label="Status" />
-          <TextFieldComponent name="species" label="Species" />
-          <TextFieldComponent name="type" label="Type" />
-          <TextFieldComponent name="gender" label="Gender" />
-          <TextFieldComponent name="origin" label="Origin" />
-          <TextFieldComponent name="currentLocation" label="Current Location" />
-          <TextFieldComponent name="image" label="Image" />
+          <TextFieldComponent
+            name="name"
+            label="Name"
+            slotProps={{
+              input: {
+                readOnly: true,
+              },
+            }}
+          />
+          <TextFieldComponent
+            name="status"
+            label="Status"
+            slotProps={{
+              input: {
+                readOnly: true,
+              },
+            }}
+          />
+          <TextFieldComponent
+            name="species"
+            label="Species"
+            slotProps={{
+              input: {
+                readOnly: true,
+              },
+            }}
+          />
+          <TextFieldComponent
+            name="type"
+            label="Type"
+            slotProps={{
+              input: {
+                readOnly: true,
+              },
+            }}
+          />
+          <TextFieldComponent
+            name="gender"
+            label="Gender"
+            slotProps={{
+              input: {
+                readOnly: true,
+              },
+            }}
+          />
+          <TextFieldComponent
+            name="origin"
+            label="Origin"
+            slotProps={{
+              input: {
+                readOnly: true,
+              },
+            }}
+          />
+          <TextFieldComponent
+            name="currentLocation"
+            label="Current Location"
+            slotProps={{
+              input: {
+                readOnly: true,
+              },
+            }}
+          />
+          <TextFieldComponent
+            name="image"
+            label="Image"
+            slotProps={{
+              input: {
+                readOnly: true,
+              },
+            }}
+          />
+          <TextFieldComponent
+            name="bestSentence"
+            label="Best Sentence"
+            multiline
+            rows={3}
+            required
+          />
           <Button type="submit" variant="contained" color="primary">
             Save
           </Button>
