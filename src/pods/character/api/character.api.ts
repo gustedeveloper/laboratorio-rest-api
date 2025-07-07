@@ -1,19 +1,39 @@
 import { Character } from './character.api-model';
+import { graphql } from '#core/api/graphql.client';
+
+const GET_CHARACTER = `
+  query GetCharacter($id: ID!) {
+    character(id: $id) {
+      id
+      name
+      status
+      species
+      type
+      gender
+      origin {
+        name
+      }
+      location {
+        name
+      }
+      image
+      episode {
+        id
+        name
+      }
+      created
+    }
+  }
+`;
+
+interface CharacterResponse {
+  character: Character;
+}
 
 export const getCharacter = async (id: string): Promise<Character> => {
-  const response = await fetch(`http://localhost:3000/api/character/${id}`);
-  const data = await response.json();
-  return data;
-};
-
-export const saveCharacter = async (character: Character): Promise<boolean> => {
-  const response = await fetch(
-    `http://localhost:3000/api/character/${character.id}`,
-    {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(character),
-    }
-  );
-  return response.ok;
+  const data = await graphql<CharacterResponse, { id: string }>({
+    query: GET_CHARACTER,
+    variables: { id },
+  });
+  return data.character;
 };

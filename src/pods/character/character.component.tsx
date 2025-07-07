@@ -1,21 +1,19 @@
 import React from 'react';
 import { Formik, Form } from 'formik';
-import Button from '@mui/material/Button';
 import { TextFieldComponent } from '#common/components';
 import { Character } from './character.vm';
 import * as classes from './character.styles';
 
 interface Props {
   character: Character;
-  onSave: (character: Character) => void;
 }
 
 export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
-  const { character, onSave } = props;
+  const { character } = props;
 
   return (
     <Formik
-      onSubmit={onSave}
+      onSubmit={() => {}}
       initialValues={character}
       enableReinitialize={true}
     >
@@ -93,16 +91,6 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
               },
             }}
           />
-          <TextFieldComponent
-            name="bestSentence"
-            label="Best Sentence"
-            multiline
-            rows={3}
-            required
-          />
-          <Button type="submit" variant="contained" color="primary">
-            Save
-          </Button>
         </Form>
       )}
     </Formik>
