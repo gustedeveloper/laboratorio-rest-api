@@ -8,6 +8,7 @@ export interface Character {
   origin: string;
   currentLocation: string;
   image: string;
+  bestSentence: string;
 }
 
 export const createEmptyCharacter = (): Character => ({
@@ -20,4 +21,5 @@ export const createEmptyCharacter = (): Character => ({
   origin: '',
   currentLocation: '',
   image: '',
+  bestSentence: '',
 });

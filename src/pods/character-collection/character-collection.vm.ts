@@ -12,6 +12,7 @@ export interface Character {
     name: string;
   };
   image: string;
+  bestSentence: string;
 }
 
 export const createEmptyCharacter = (): Character => ({
@@ -28,4 +29,5 @@ export const createEmptyCharacter = (): Character => ({
     name: '',
   },
   image: '',
+  bestSentence: '',
 });
