@@ -13,4 +13,5 @@ export const mapFromApiToVm = (
   origin: character.origin,
   currentLocation: character.location,
   image: character.image,
+  bestSentence: character.bestSentence,
 });
