@@ -1,11 +1,8 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import * as api from './api';
 import { createEmptyCharacter, Character } from './character.vm';
-import {
-  mapCharacterFromApiToVm,
-  mapCharacterFromVmToApi,
-} from './character.mapper';
+import { mapCharacterFromApiToVm } from './character.mapper';
 import { CharacterComponent } from './character.component';
 
 export const CharacterContainer: React.FunctionComponent = () => {
@@ -13,7 +10,6 @@ export const CharacterContainer: React.FunctionComponent = () => {
     createEmptyCharacter()
   );
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
 
   const handleLoadCharacter = async () => {
     const apiCharacter = await api.getCharacter(id);
@@ -26,15 +22,5 @@ export const CharacterContainer: React.FunctionComponent = () => {
     }
   }, []);
 
-  const handleSave = async (character: Character) => {
-    const apiCharacter = mapCharacterFromVmToApi(character);
-    const success = await api.saveCharacter(apiCharacter);
-    if (success) {
-      navigate(-1);
-    } else {
-      alert('Error on save character');
-    }
-  };
-
-  return <CharacterComponent character={character} onSave={handleSave} />;
+  return <CharacterComponent character={character} />;
 };
