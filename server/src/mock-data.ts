@@ -1,5 +1,4 @@
-import { Character } from "./model.js";
-
+import { Character } from './model.js';
 
 export const characters: Character[] = [
   {
@@ -73,6 +72,7 @@ export const characters: Character[] = [
     ],
     url: 'https://rickandmortyapi.com/api/character/1',
     created: '2017-11-04T18:48:46.250Z',
+    bestSentence: 'Wubba lubba dub dub!',
   },
   {
     id: 2,
@@ -145,6 +145,7 @@ export const characters: Character[] = [
     ],
     url: 'https://rickandmortyapi.com/api/character/2',
     created: '2017-11-04T18:50:21.651Z',
+    bestSentence: 'Aw jeez, Rick!',
   },
   {
     id: 3,
@@ -208,6 +209,7 @@ export const characters: Character[] = [
     ],
     url: 'https://rickandmortyapi.com/api/character/3',
     created: '2017-11-04T19:09:56.428Z',
+    bestSentence: "I'm not a clone!",
   },
   {
     id: 4,
@@ -271,6 +273,7 @@ export const characters: Character[] = [
     ],
     url: 'https://rickandmortyapi.com/api/character/4',
     created: '2017-11-04T19:22:43.665Z',
+    bestSentence: 'I am a surgeon!',
   },
   {
     id: 5,
@@ -331,5 +334,6 @@ export const characters: Character[] = [
     ],
     url: 'https://rickandmortyapi.com/api/character/5',
     created: '2017-11-04T19:26:56.301Z',
+    bestSentence: "I'm not an idiot!",
   },
 ];
